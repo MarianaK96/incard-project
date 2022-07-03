@@ -5,6 +5,7 @@
     - input boxes (atom), buttons (atom), dashboard display (individual boxes of data - molecules)
     - title, subtitle
   - components
+  - TODO: implement context wrapper / hooks for dashboard data
 
 **Creation**
 
@@ -33,4 +34,4 @@
 **DevX**
 
 - linting
-- would implement a component templating solution with plop/handlebars to generate new components
+- TODO: implement a component templating solution with plop/handlebars to generate new components

@@ -26,7 +26,6 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
   };
 
   const onSubmit = (data: { email: string; password: string }) => {
-    console.log(data);
     // We are intentionally ambiguous about which property is incorrect
     // to prevent brute force hacks
     if (
