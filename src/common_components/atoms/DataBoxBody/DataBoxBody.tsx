@@ -22,13 +22,14 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
   return (
     <>
       <div className="rounded-b-md bg-dark-blue-600 w-full justify-between h-32">
-        <div className="flex justify-around h-full">
+        <div className="flex justify-start h-full px-8">
           <div className="flex flex-col justify-around h-full">
-            <Text as="p" textStyle="body" className="text-white">
+            <Text as="p" textStyle="body" className="text-grey">
               {title}
             </Text>
             <Text as="p" textStyle="body" bold className="text-white text-xl">
-              {figure && figure.toString()}
+              {figure &&
+                figure.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </Text>
             <Text
               as="p"

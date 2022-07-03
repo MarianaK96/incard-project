@@ -41,10 +41,8 @@ export const dashboardData = {
     expenses: 4467.0,
     oldExpenses: 4332.99,
   },
-  balanceHistory: {
-    January: 2440.0,
-    February: 2022.0,
-    March: 2550.0,
-    April: 2650.0,
-  },
+  balanceHistory: [
+    2440.0, 2022.0, 2550.0, 2650.0, 2440.0, 2022.0, 2550.0, 2650.0, 2440.0,
+    2022.0, 2550.0, 2650.0,
+  ],
 };

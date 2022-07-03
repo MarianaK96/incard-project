@@ -1,26 +1,14 @@
 export interface IOtherAccountsData {
-  incardGBP: {
+  [key: string]: {
     name: string;
     sum: number;
   };
-  incardEUR: {
-    name: string;
-    sum: number;
-  };
-  bankHSBC: {
-    name: string;
-    sum: number;
-  };
-  paypalUSD: {
-    name: string;
-    sum: number;
-  };
-  paypalGBP: {
-    name: string;
-    sum: number;
-  };
-  paypalOther: {
-    name: string;
-    sum: number;
-  };
+}
+
+export interface IBalanceHistoryData {
+  [key: string]: string;
+}
+
+export interface IActivity {
+  [key: string]: string;
 }
