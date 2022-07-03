@@ -32,5 +32,6 @@ export const text = {
       revenue: "Revenue",
       expenses: "Expenses",
     },
+    logout: "Logout",
   },
 };

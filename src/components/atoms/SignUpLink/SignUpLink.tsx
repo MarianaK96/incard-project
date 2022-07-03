@@ -12,8 +12,12 @@ const SignUpLink: React.FC<SignUpLinkProps> = ({}) => {
           {text.login.noAccount}
         </Text>
         <Link href={"./"}>
-          <Text as="a" textStyle="body" bold className="text-teal">
-            {/* how to make this text medium weight? */}
+          <Text
+            as="a"
+            textStyle="body"
+            bold
+            className="text-teal cursor-pointer"
+          >
             {text.login.signUpLink}
           </Text>
         </Link>

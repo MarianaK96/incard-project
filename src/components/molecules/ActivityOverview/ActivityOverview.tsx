@@ -5,7 +5,6 @@ import { text } from "src/utils/text";
 import { IActivity } from "src/interfaces";
 
 const ActivityOverview: React.FC<IActivity> = ({ data }) => {
-  console.log(" data : ", data);
   return (
     <>
       <div className="flex flex-col bg-dark-blue-600 h-full">
