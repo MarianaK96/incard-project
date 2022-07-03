@@ -1,26 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { Layout } from "src/common_components/organisms";
 import Logo from "../../../icons/logo.svg";
-import { getGraphData } from "src/utils/api";
 import { DashboardData } from "src/components/organisms";
 
 interface HomeProps {}
 
-const Home: React.FC<HomeProps> = ({}) => {
+const Home: React.FC<HomeProps> = (props) => {
+  const data = { props };
   const [overviewData, setOverviewData] = useState({});
+  const [accountsData, setAccountsData] = useState({});
+
   useEffect(() => {
-    const data = getGraphData();
-    setOverviewData(data.body.data.overview);
+    const dashboardData = data.props.data.body.data;
+    setOverviewData(dashboardData.overview);
+    setAccountsData(dashboardData.otherAccounts);
   }, []);
+
   return (
     <>
       <Layout>
         <Link href="/">
-          <Logo className="cursor-pointer" />
+          <a className="m-8">
+            <Logo className="cursor-pointer" />
+          </a>
         </Link>
         <div>
-          <DashboardData overviewData={overviewData} />
+          <DashboardData
+            overviewData={overviewData}
+            accountsData={accountsData}
+          />
         </div>
       </Layout>
     </>

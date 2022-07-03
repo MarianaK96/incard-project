@@ -1,27 +1,61 @@
 import Link from "next/link";
 import { Text } from "src/common_components/atoms";
-import { GrFormAdd } from "react-icons/gr";
+import AddIcon from "../../../icons/add.svg";
 
 interface DataBoxTitleProps {
   title: string;
-  action: string;
+  actionOne: string;
+  actionTwo?: string;
+  type: string;
 }
 
-const DataBoxTitle: React.FC<DataBoxTitleProps> = ({ title, action }) => {
+const DataBoxTitle: React.FC<DataBoxTitleProps> = ({
+  title,
+  actionOne,
+  actionTwo,
+  type,
+}) => {
   return (
     <>
-      <div className="rounded-t-md bg-dark-blue-300 w-full flex justify-around w-full">
-        <Text as="p" textStyle="body" className="text-white">
+      <div className="rounded-t-md bg-dark-blue-300 w-full flex justify-between w-full p-4 px-8 items-center">
+        <Text
+          as="p"
+          textStyle="body"
+          className="text-white uppercase text-grey"
+        >
           {title}
         </Text>
-        <Link href={"/"}>
-          <a className="flex">
-            <Text as="a" textStyle="body" className="text-white">
-              <GrFormAdd width="24" height="24" color="white" />
-              {action}
-            </Text>
-          </a>
-        </Link>
+        {type === "overview" ? (
+          <Link href={"/"}>
+            <a className=" flex items-center">
+              <AddIcon className="text-white mx-3" />
+              <Text as="p" textStyle="body" className="text-white">
+                {actionOne}
+              </Text>
+            </a>
+          </Link>
+        ) : (
+          <>
+            <Link href={"/"}>
+              <a className="flex items-center ">
+                <AddIcon className="text-white mx-3" />
+                <Text as="p" textStyle="body" className="text-white">
+                  {actionOne}
+                </Text>
+              </a>
+            </Link>
+            <span className="hidden md:visible">
+              <Link href={"/"}>
+                <a className="flex items-center">
+                  <AddIcon className="text-white mx-3" />
+                  <Text as="p" textStyle="body" className="text-white">
+                    {actionTwo}
+                  </Text>
+                </a>
+              </Link>
+            </span>
+          </>
+        )}
       </div>
     </>
   );

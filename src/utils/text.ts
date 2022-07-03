@@ -16,5 +16,10 @@ export const text = {
       actionText: "Add funds",
       bodyTitle: "incard balance",
     },
+    otherAccounts: {
+      title: "Accounts",
+      actionText: "Add",
+      actionTextTwo: "Exchange",
+    },
   },
 };

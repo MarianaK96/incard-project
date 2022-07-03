@@ -28,7 +28,7 @@ export const getGraphData = () => {
     },
   };
 
-  console.log(" respones : ", response);
+  // console.log(" respones : ", response);
 
   return response;
 };

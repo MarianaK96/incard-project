@@ -18,16 +18,18 @@ const DataBox: React.FC<DataBoxProps> = ({
   figureTwo,
   bodyTitle,
 }) => {
+  // console.log(" action : ", action);
   return (
     <>
-      <div className="w-5/6 mx-auto">
-        <DataBoxTitle title={title} action={action} />
-        <DataBoxBody
+      <div>
+        data box
+        <DataBoxTitle title={title} actionOne={action} type={"overview"} />
+        {/* <DataBoxBody
           title={bodyTitle}
           figure={figure}
           logo={logo}
           figureTwo={figureTwo}
-        />
+        /> */}
       </div>
     </>
   );

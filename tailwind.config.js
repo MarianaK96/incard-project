@@ -18,6 +18,8 @@ module.exports = {
           900: "#14142B",
         },
         teal: "#0CF8E9",
+        success: "#58C38E",
+        grey: "#858E97",
       },
     },
   },

@@ -4,12 +4,36 @@ export const dashboardData = {
     oldBalance: 12054.0,
   },
   otherAccounts: {
-    incardGBP: 12839.43,
-    incardEUR: 12839.43,
-    bankHSBC: 12839.43,
-    paypalUSD: 12839.43,
-    paypalGBP: 12839.43,
-    paypalOther: 12839.43,
+    incardGBP: {
+      name: "GBP incard",
+      sum: 12839.43,
+      currency: "GBP",
+    },
+    incardEUR: {
+      name: "EUR incard",
+      sum: 1839.33,
+      currency: "EUR",
+    },
+    bankHSBC: {
+      name: "HSBC Banking",
+      sum: 15839.43,
+      currency: "GBP",
+    },
+    paypalUSD: {
+      name: "Paypal",
+      sum: 22839.43,
+      currency: "USD",
+    },
+    paypalGBP: {
+      name: "Paypal",
+      sum: 29.43,
+      currency: "GBP",
+    },
+    paypalOther: {
+      name: "Another account",
+      sum: 55.43,
+      currency: "GBP",
+    },
   },
   activity: {
     revenue: 8027.0,
