@@ -20,6 +20,7 @@ export const getGraphData = () => {
   //   let response = await fetch(`${api().baseUrl}/graph-data`, {
   //     method: "GET",
   //     ...apiHeaders(),
+  //     Authorization: `Bearer ${localstorage.getItem('auth-token')}`
   //   });
 
   // Mocking backend response
