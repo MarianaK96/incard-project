@@ -1,3 +1,4 @@
-import Component from "./Component";
+import LoginForm from "./LoginForm";
+import DashboardData from "./DashboardData";
 
-export { Component };
+export { LoginForm, DashboardData };
