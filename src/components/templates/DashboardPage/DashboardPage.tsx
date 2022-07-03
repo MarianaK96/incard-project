@@ -6,19 +6,12 @@ import { DashboardData } from "src/components/organisms";
 
 interface HomeProps {}
 
-const Home: React.FC<HomeProps> = (props) => {
-  const data = { props };
-  const [overviewData, setOverviewData] = useState({});
-  const [accountsData, setAccountsData] = useState({});
+const Home: React.FC<HomeProps> = ({ data }) => {
+  const { overview, otherAccounts, balanceHistory, activity } = data.body.data;
 
-  useEffect(() => {
-    const dashboardData = data.props.data.body.data;
-    setOverviewData(dashboardData.overview);
-    setAccountsData(dashboardData.otherAccounts);
-  }, []);
-
+  console.log(" activity  =-=-: ", activity);
   return (
-    <>
+    <div className="bg-dark-blue-900">
       <Layout>
         <Link href="/">
           <a className="m-8">
@@ -27,12 +20,14 @@ const Home: React.FC<HomeProps> = (props) => {
         </Link>
         <div>
           <DashboardData
-            overviewData={overviewData}
-            accountsData={accountsData}
+            overviewData={overview}
+            accountsData={otherAccounts}
+            balanceHistoryData={balanceHistory}
+            activityData={activity}
           />
         </div>
       </Layout>
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { DataBox } from "src/common_components/molecules";
 import { getGraphData } from "src/utils/api";
 import { text } from "src/utils/text";
 import LogoSmall from "../../../icons/incard-icon.svg";
+import { DataBoxTitle } from "src/common_components/atoms";
+import { DataBoxBody } from "src/common_components/atoms";
 
 interface OverviewDataProps {
   overviewData: {
@@ -13,15 +14,19 @@ interface OverviewDataProps {
 
 const OverviewData: React.FC<OverviewDataProps> = ({ overviewData }) => {
   return (
-    <div className="w-full">
-      <DataBox
+    <div className="w-full h-full">
+      <DataBoxTitle
         title={text.dashboard.overview.title}
-        action={text.dashboard.overview.actionText}
-        figure={overviewData.balance}
-        figureTwo={overviewData.oldBalance}
-        logo={<LogoSmall />}
-        bodyTitle={text.dashboard.overview.bodyTitle}
+        actionOne={text.dashboard.overview.actionText}
+        type={"accountHistory"}
       />
+      <div className="flex flex-row">
+        <DataBoxBody
+          title={text.dashboard.activityOverview.revenue}
+          figure={overviewData.balance}
+          figureTwo={overviewData.oldBalance}
+        />
+      </div>
     </div>
   );
 };

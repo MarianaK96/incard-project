@@ -1,3 +1,3 @@
-import Component from "./Component";
+import LineGraph from "./LineGraph";
 
-export default Component;
+export default LineGraph;

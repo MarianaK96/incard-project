@@ -6,10 +6,10 @@ interface dashboardProps {
   data: any;
 }
 
-const dashboard: React.FC<dashboardProps> = () => {
+const dashboard: React.FC<dashboardProps> = ({ data }) => {
   // TODO - Incase more components need access to this data - avoid prop drilling
   // const DashboardContext = React.createContext({});
-  const data = getGraphData();
+  // const data = getGraphData();
 
   return (
     // <DashboardContext.Provider value={data}>
@@ -20,7 +20,7 @@ const dashboard: React.FC<dashboardProps> = () => {
 
 export default dashboard;
 
-// export async function getServerSideProps() {
-//   const data = getGraphData();
-//   return { props: { data } };
-// }
+export async function getServerSideProps() {
+  const data = getGraphData();
+  return { props: { data } };
+}

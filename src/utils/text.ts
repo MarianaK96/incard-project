@@ -21,5 +21,16 @@ export const text = {
       actionText: "Add",
       actionTextTwo: "Exchange",
     },
+    balanceHistory: {
+      title: "Balance histroy",
+      actionOne: "All accounts",
+      actionTwo: "Year to date",
+    },
+    activityOverview: {
+      title: "Activity",
+      actionOne: "Year to date",
+      revenue: "Revenue",
+      expenses: "Expenses",
+    },
   },
 };
