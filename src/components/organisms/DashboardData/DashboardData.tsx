@@ -23,7 +23,6 @@ const DashboardData: React.FC<DashboardDataProps> = ({
   balanceHistoryData,
   activityData,
 }) => {
-  console.log(" activityData in DD : ", activityData);
   return (
     <>
       <section className="grid grid-cols-12 gap-5">

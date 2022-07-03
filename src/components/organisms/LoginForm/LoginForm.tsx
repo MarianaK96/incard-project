@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { FormInput, Text } from "src/common_components/atoms";
 import { text } from "src/utils/text";
 import Logo from "../../../icons/logo.svg";
 import { SignUpLink } from "src/components/atoms";
+import { postLogin } from "src/utils/api";
+import { AuthContext } from "src/context/auth-context";
 
 interface LoginFormProps {}
 
 const LoginForm: React.FC<LoginFormProps> = ({}) => {
+  const router = useRouter();
   const [passwordType, useSetPasswordType] = useState<"password" | "text">(
     "password"
   );
+  const authContext = useContext(AuthContext);
 
   const {
     register,
@@ -25,17 +30,25 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     password: "fooBar123",
   };
 
-  const onSubmit = (data: { email: string; password: string }) => {
+  const onSubmit = async (data: { email: string; password: string }) => {
     // We are intentionally ambiguous about which property is incorrect
     // to prevent brute force hacks
-    if (
-      data.email !== requiredUser.username ||
-      data.password !== requiredUser.username
-    ) {
-      setError("email", {
+
+    const response = await postLogin({
+      email: data.email,
+      password: data.password,
+    });
+    console.log(" response : ", response);
+    if (response.status === 400) {
+      return setError("email", {
         type: "custom",
         message: text.login.incorrectLoginDetails,
       });
+    }
+
+    if (response.status === 200) {
+      authContext.setAuthState(response.jwtToken);
+      return router.push("/dashboard");
     }
   };
 
