@@ -1,3 +1,3 @@
 import OverviewData from "./OverviewData";
 
-export { OverviewData };
+export default OverviewData;

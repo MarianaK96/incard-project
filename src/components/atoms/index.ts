@@ -1,3 +1,4 @@
-import Component from "./Component";
+import LoginBackground from "./LoginBackground";
+import SignUpLink from "./SignUpLink";
 
-export { Component };
+export { LoginBackground, SignUpLink };

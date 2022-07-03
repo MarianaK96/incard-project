@@ -1,3 +1,4 @@
-import Home from "./Home";
+import LoginPage from "./LoginPage";
+import DashboardPage from "./DashboardPage";
 
-export { Home };
+export { LoginPage, DashboardPage };

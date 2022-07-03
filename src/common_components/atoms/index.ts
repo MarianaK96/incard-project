@@ -1,3 +1,6 @@
-import Component from "./Component";
+import FormInput from "./FormInput";
+import Text from "./Text";
+import DataBoxTitle from "./DataBoxTitle";
+import DataBoxBody from "./DataBoxBody";
 
-export { Component };
+export { FormInput, Text, DataBoxTitle, DataBoxBody };

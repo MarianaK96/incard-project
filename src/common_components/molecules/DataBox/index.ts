@@ -1,3 +1,3 @@
 import DataBox from "./DataBox";
 
-export { DataBox };
+export default DataBox;
