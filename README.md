@@ -3,8 +3,8 @@
 ### Logging in
 
 - login with the following details to gain access to the dashboard page: - email: jane@incard.com - password: fooBar123
-- on successful login, a moocked JWT token is added to auth prop in local storage
-- we check for the presece of JWT token in local storage on dashboard and login pages to redirect user appropriately
+- on successful login, a mocked JWT token is added to auth prop in local storage
+- then check for the presece of JWT token in local storage on dashboard and login pages to redirect user appropriately
 
 ## Creation
 
