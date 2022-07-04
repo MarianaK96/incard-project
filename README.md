@@ -39,4 +39,5 @@
 - use a component templating solution with plop/handlebars to generate new components for better dev experience
 - add the alternate versions of the dashboard page
 - esnure Nivo charts works with Next.js so I can use that instead of Chart.js
--fix forward ref error with react-hook-form on login page (this error shouldn't occur with native html inputs so would require more investigation) 
+- fix forward ref error with react-hook-form on login page (this error shouldn't occur with native html inputs so would require more investigation) 
+- 
