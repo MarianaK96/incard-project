@@ -8,10 +8,12 @@ import Logo from "../../../icons/logo.svg";
 import { SignUpLink } from "src/components/atoms";
 import { postLogin } from "src/utils/api";
 import { AuthContext } from "src/context/auth-context";
+interface FormValues {
+  email: string;
+  password: string;
+}
 
-interface LoginFormProps {}
-
-const LoginForm: React.FC<LoginFormProps> = ({}) => {
+const LoginForm = ({}) => {
   const router = useRouter();
   const [passwordType, useSetPasswordType] = useState<"password" | "text">(
     "password"
@@ -23,7 +25,7 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     formState: { errors },
     handleSubmit,
     setError,
-  } = useForm();
+  } = useForm<FormValues>();
 
   const onSubmit = async (data: { email: string; password: string }) => {
     // made it intentionally ambiguous about which property is incorrect
