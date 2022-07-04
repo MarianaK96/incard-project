@@ -40,4 +40,3 @@
 - add the alternate versions of the dashboard page
 - esnure Nivo charts works with Next.js so I can use that instead of Chart.js
 - fix forward ref error with react-hook-form on login page (this error shouldn't occur with native html inputs so would require more investigation) 
-- 
