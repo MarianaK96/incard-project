@@ -4,7 +4,11 @@ import { DataBoxBody } from "src/common_components/atoms";
 import { text } from "src/utils/text";
 import { IActivity } from "src/interfaces";
 
-const ActivityOverview: React.FC<IActivity> = ({ data }) => {
+interface ActivityOverviewProps {
+  data: IActivity;
+}
+
+const ActivityOverview: React.FC<ActivityOverviewProps> = ({ data }) => {
   return (
     <>
       <div className="flex flex-col bg-dark-blue-600 h-full">

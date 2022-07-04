@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { DataBoxTitle } from "src/common_components/atoms";
 import CondensedDataBody from "src/common_components/atoms/CondensedDataBody";
-import { getGraphData } from "src/utils/api";
 import { text } from "src/utils/text";
 import LogoSmall from "../../../icons/incard-icon.svg";
 import { IOtherAccountsData } from "src/interfaces";
