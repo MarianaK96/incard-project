@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { DataBoxTitle } from "src/common_components/atoms";
 import CondensedDataBody from "src/common_components/atoms/CondensedDataBody";
-import { DataBox } from "src/common_components/molecules";
 import { getGraphData } from "src/utils/api";
 import { text } from "src/utils/text";
 import LogoSmall from "../../../icons/incard-icon.svg";

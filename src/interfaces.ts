@@ -11,12 +11,10 @@ export interface IBalanceHistoryData {
 }
 
 export interface IActivity {
-  data: {
-    revenue: number;
-    oldRevenue: number;
-    expenses: number;
-    oldExpenses: number;
-  };
+  revenue: number;
+  oldRevenue: number;
+  expenses: number;
+  oldExpenses: number;
 }
 
 export interface IAllData {
