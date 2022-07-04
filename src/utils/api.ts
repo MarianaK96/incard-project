@@ -33,17 +33,11 @@ export const getGraphData = () => {
   return response;
 };
 
-export const postLogin = async (data) => {
-  //   let response = await fetch(`${api().baseUrl}/graph-data`, {
-  //     method: "POST",
-  //     ...apiHeaders(),
-  //     body: JSON.stringify(data)
-  //   });
-
+export const postLogin = async (data: { email: any; password: any }) => {
   // Mocking backend response
 
   const requiredUser = {
-    username: "user@domain.com",
+    username: "jane@incard.com",
     password: "fooBar123",
   };
 

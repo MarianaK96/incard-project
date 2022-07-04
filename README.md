@@ -1,37 +1,34 @@
-**Structure**
+# incard login and dashboard
 
-- atomic design
-  - common components
-    - input boxes (atom), buttons (atom), dashboard display (individual boxes of data - molecules)
-    - title, subtitle
-  - components
-  - TODO: implement context wrapper / hooks for dashboard data
+### How to use
 
-**Creation**
+- login with the following details to gain access to the dashboard page: - email: jane@incard.com - password: fooBar123
 
-- SSR - load data for dashboard on page
-- Data - use JSON server to hold the data
-  - incard balance, revenue, expenses
-  - amount of money in each of the accounts
-    - need 4 different views for each of these
-  - fake data for the line chart
-  - recommendations - maybe a guardian api?
+## Creation
 
-**Tech Stack**
+###### Tech stack
 
 - Next.js
 - Typescript
 - Tailwind CSS
-- Nivo Charts for the line chart
-- Testing - Jest
+- Chart.js
+- React-hook-forms
 
-**Tips**
+###### Structure
 
-- semantic HTML
-  - sections
-  - form - react hook form?
+- atomic design (atoms, molecules, organisms and templates) split up into most commonly used components and regular components
 
-**DevX**
+###### DevX
 
-- linting
-- TODO: implement a component templating solution with plop/handlebars to generate new components
+- linting (ESLint) set up to better catch errors
+- use of prettier to auto format
+- use of form library to simplify form creation and handling of error messages
+- use of named imports when importing components into parent component cuts down on code and makes for better readability
+
+## To do
+
+- I would add a few tests: - install jest for this - test that the 'api' call on the login page returns a token and this is stored correctly - test that logged in users have access to the dashboard page (auth context working as it should be)
+- implement context wrapper / hooks for dashboard data to avoid prop drilling
+- use a component templating solution with plop/handlebars to generate new components for better dev experience
+- add the alternate versions of the dashboard page
+- esnure Nivo charts works with Next.js so I can use that instead of Chart.js

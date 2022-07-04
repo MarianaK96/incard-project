@@ -14,6 +14,7 @@ interface FormInputProps {
   register: any;
   passwordType?: "password" | "text";
   togglePasswordType?: Dispatch<SetStateAction<"password" | "text">>;
+  testId: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -24,6 +25,7 @@ const FormInput: React.FC<FormInputProps> = ({
   label,
   register,
   passwordType,
+  testId,
   togglePasswordType,
 }) => {
   return (
@@ -35,6 +37,7 @@ const FormInput: React.FC<FormInputProps> = ({
           </Text>
         </label>
         <input
+          data-testid={testId}
           id={id}
           name={id}
           type={type}

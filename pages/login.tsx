@@ -1,7 +1,7 @@
 import { LoginPage } from "src/components/templates";
 import { AuthProvider } from "src/context/auth-context";
 
-const login: React.FC = ({}) => {
+const Login: React.FC = ({}) => {
   return (
     <AuthProvider>
       <LoginPage />
@@ -9,4 +9,4 @@ const login: React.FC = ({}) => {
   );
 };
 
-export default login;
+export default Login;

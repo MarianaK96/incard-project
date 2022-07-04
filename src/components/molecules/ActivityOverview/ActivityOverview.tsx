@@ -13,7 +13,7 @@ const ActivityOverview: React.FC<IActivity> = ({ data }) => {
           actionOne={text.dashboard.activityOverview.actionOne}
           type={"accountHistory"}
         />
-        <div className="flex flex-row">
+        <div className="flex flex-col md:flex-row">
           <DataBoxBody
             title={text.dashboard.activityOverview.revenue}
             figure={data.revenue}

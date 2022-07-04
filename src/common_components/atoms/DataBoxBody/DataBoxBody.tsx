@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Text } from "src/common_components/atoms";
+import { classNames } from "src/utils/functions";
+import AddIcon from "../../../icons/add.svg";
 
 interface DataBoxBodyProps {
   title: string;
   figure: number;
   figureTwo?: number;
-  logo: JSX.Element;
+  logo?: JSX.Element;
 }
 
 const DataBoxBody: React.FC<DataBoxBodyProps> = ({
@@ -14,11 +17,20 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
   figureTwo,
   logo,
 }) => {
+  const [percentColor, setPercentColor] = useState<string>("text-success");
   const calculatePercentage = (currAmount: number, oldAmount: number) => {
     const diff = currAmount - oldAmount;
     const percent = Math.floor((diff / oldAmount) * 100);
     return percent;
   };
+
+  const setColor = () => {
+    if (figureTwo && figureTwo > figure) setPercentColor("text-error");
+  };
+
+  useEffect(() => {
+    setColor();
+  }, [figure, figureTwo]);
   return (
     <>
       <div className="rounded-b-md bg-dark-blue-600 w-full justify-between h-32">
@@ -28,18 +40,22 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
               {title}
             </Text>
             <Text as="p" textStyle="body" bold className="text-white text-xl">
+              £{" "}
               {figure &&
                 figure.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </Text>
             <Text
               as="p"
               textStyle="body"
-              className="text-white text-xl text-success"
+              className={classNames(percentColor, " text-xl")}
             >
-              {figureTwo && calculatePercentage(figure, figureTwo)}
+              <span className="flex items-center w-11 justify-between">
+                {figureTwo && figureTwo > figure ? "" : <AddIcon />}
+                {figureTwo && calculatePercentage(figure, figureTwo)}%
+              </span>
             </Text>
           </div>
-          <div>{logo}</div>
+          <div className="ml-auto">{logo}</div>
         </div>
       </div>
     </>
@@ -47,5 +63,3 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
 };
 
 export default DataBoxBody;
-
-//logo to the right

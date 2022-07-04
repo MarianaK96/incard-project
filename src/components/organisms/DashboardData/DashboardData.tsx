@@ -13,7 +13,7 @@ interface DashboardDataProps {
     oldBalance: number;
   };
   accountsData: IOtherAccountsData;
-  balanceHistoryData: IBalanceHistoryData;
+  balanceHistoryData: number[];
   activityData: IActivity;
 }
 
@@ -25,8 +25,8 @@ const DashboardData: React.FC<DashboardDataProps> = ({
 }) => {
   return (
     <>
-      <section className="grid grid-cols-12 gap-5">
-        <div className="col-span-full md:col-span-4">
+      <section className="px-8 md:px-20 flex justify-between flex-col lg:px-0 lg:grid lg:grid-cols-12 gap-5 pb-1">
+        <div className="w-full col-span-full md:col-span-4">
           <OverviewData overviewData={overviewData} />
         </div>
         <div className="col-span-full md:col-span-4 md:row-start-2">
@@ -35,7 +35,7 @@ const DashboardData: React.FC<DashboardDataProps> = ({
         <div className="col-span-full md:col-start-5 md:col-span-8 md:h-full">
           <ActivityOverview data={activityData} />
         </div>
-        <div className="col-span-full md:col-start-5 md:col-span-8 md:h-full">
+        <div className="col-span-full md:col-start-5 md:col-span-8 md:h-full mb-5">
           <LineGraph data={balanceHistoryData} />
         </div>
       </section>
