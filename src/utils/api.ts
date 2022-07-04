@@ -33,6 +33,7 @@ export const getGraphData = () => {
   return response;
 };
 
+<<<<<<< Updated upstream
 export const postLogin = async (data) => {
   //   let response = await fetch(`${api().baseUrl}/graph-data`, {
   //     method: "POST",
@@ -40,6 +41,9 @@ export const postLogin = async (data) => {
   //     body: JSON.stringify(data)
   //   });
 
+=======
+export const postLogin = async (data: { email: any; password: any }) => {
+>>>>>>> Stashed changes
   // Mocking backend response
 
   const requiredUser = {

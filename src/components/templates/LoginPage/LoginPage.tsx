@@ -12,7 +12,7 @@ const LoginPage: React.FC<LoginPageProps> = ({}) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (authContext.isUserAuthenticated()) router.push("/dashboard");
+    if (authContext?.isUserAuthenticated()) router.push("/dashboard");
   }, []);
   return (
     <>

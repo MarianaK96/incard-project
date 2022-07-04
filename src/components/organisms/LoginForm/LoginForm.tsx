@@ -34,11 +34,10 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     // We are intentionally ambiguous about which property is incorrect
     // to prevent brute force hacks
 
-    const response = await postLogin({
+    const response: { status: number; jwtToken?: string } = await postLogin({
       email: data.email,
       password: data.password,
     });
-    console.log(" response : ", response);
     if (response.status === 400) {
       return setError("email", {
         type: "custom",
@@ -47,7 +46,7 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     }
 
     if (response.status === 200) {
-      authContext.setAuthState(response.jwtToken);
+      authContext?.setAuthState(response.jwtToken);
       return router.push("/dashboard");
     }
   };
@@ -65,6 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
       </Text>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormInput
+          testId="emailInput"
           id="email"
           type="email"
           placeholder=""
@@ -73,6 +73,7 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
           register={register("email", { required: true })}
         />
         <FormInput
+          testId="passwordInput"
           id="password"
           type={passwordType}
           placeholder=""
@@ -92,8 +93,12 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
           </Text>
         </Link>
         <div className="mt-4">
-          <button className="bg-teal text-dark-blue-900 py-2 px-4 rounded-lg ">
-            <input type="submit" className="cursor-pointer" />
+          <button className="bg-teal text-dark-blue-900 py-2 px-4 rounded-lg">
+            <input
+              type="submit"
+              className="cursor-pointer"
+              data-testid="submitBtn"
+            />
           </button>
         </div>
       </form>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Text } from "src/common_components/atoms";
+import AddIcon from "../../../icons/add.svg";
 
 interface DataBoxBodyProps {
   title: string;
@@ -36,10 +37,13 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
               textStyle="body"
               className="text-white text-xl text-success"
             >
-              {figureTwo && calculatePercentage(figure, figureTwo)}
+              <span className="flex items-center w-11 justify-between">
+                {figureTwo && figureTwo > figure ? "" : <AddIcon />}
+                {figureTwo && calculatePercentage(figure, figureTwo)}%
+              </span>
             </Text>
           </div>
-          <div>{logo}</div>
+          <div className="ml-auto">{logo}</div>
         </div>
       </div>
     </>
@@ -47,5 +51,3 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
 };
 
 export default DataBoxBody;
-
-//logo to the right
