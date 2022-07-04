@@ -5,10 +5,34 @@ export interface IOtherAccountsData {
   };
 }
 
-export interface IBalanceHistoryData {
-  [key: string]: string;
+export interface IActivity {
+  revenue: number;
+  oldRevenue: number;
+  expenses: number;
+  oldExpenses: number;
 }
 
-export interface IActivity {
-  [key: string]: string;
+export interface IAllData {
+  data: {
+    body: {
+      data: {
+        overview: {
+          balance: number;
+          oldBalance: number;
+        };
+        otherAccounts: IOtherAccountsData;
+        activity: IActivity;
+        balanceHistory: number[];
+      };
+    };
+  };
 }
+
+export type IAuthContext = {
+  authState: {
+    token: string | null | undefined | void;
+  };
+  setAuthState: (userAuthInfo: string) => void;
+  logout: () => void;
+  isUserAuthenticated: () => boolean;
+};

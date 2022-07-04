@@ -7,19 +7,20 @@ import { DashboardData } from "src/components/organisms";
 import { AuthContext } from "src/context/auth-context";
 import { Text } from "src/common_components/atoms";
 import { text } from "src/utils/text";
+import { IAllData } from "src/interfaces";
 
-interface HomeProps {}
-
-const Home: React.FC<HomeProps> = ({ data }) => {
+const DashboardPage: ({ data }: IAllData) => JSX.Element | undefined = ({
+  data,
+}: IAllData) => {
   const { overview, otherAccounts, balanceHistory, activity } = data.body.data;
   const authContext = useContext(AuthContext);
   const router = useRouter();
 
   useEffect(() => {
-    if (!authContext.isUserAuthenticated()) router.push("/login");
+    if (!authContext?.isUserAuthenticated()) router.push("/login");
   }, []);
 
-  if (!authContext.isUserAuthenticated()) return;
+  if (!authContext?.isUserAuthenticated()) return;
   return (
     <div className="bg-dark-blue-900">
       <Layout>
@@ -32,7 +33,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
           <Text
             as="p"
             onClick={() => {
-              authContext.logout();
+              authContext?.logout();
               router.push("/login");
             }}
             className="text-white p-8 cursor-pointer"
@@ -54,4 +55,4 @@ const Home: React.FC<HomeProps> = ({ data }) => {
   );
 };
 
-export default Home;
+export default DashboardPage;

@@ -20,7 +20,7 @@ Chart.register(
 );
 
 interface LineGraphProps {
-  data: string[];
+  data: number[];
 }
 
 const LineGraph: React.FC<LineGraphProps> = ({ data }) => {
@@ -39,7 +39,7 @@ const LineGraph: React.FC<LineGraphProps> = ({ data }) => {
     "dec",
   ];
   return (
-    <div className="flex flex-col items-center justify-center  bg-dark-blue-600">
+    <div className="flex flex-col items-center justify-center bg-dark-blue-600 mb-8 md:mb-0 pb-3">
       <DataBoxTitle
         title={text.dashboard.balanceHistory.title}
         actionOne={text.dashboard.balanceHistory.actionOne}
@@ -47,7 +47,7 @@ const LineGraph: React.FC<LineGraphProps> = ({ data }) => {
         type={"accountHistory"}
       />
       {data && (
-        <div className="h-full w-full p-6">
+        <div className="h-full w-full p-6 rounded-b-md">
           <Line
             data={{
               labels: labels.map((month) =>
@@ -55,9 +55,7 @@ const LineGraph: React.FC<LineGraphProps> = ({ data }) => {
               ),
               datasets: [
                 {
-                  // label: "My First Dataset",
                   data,
-                  // fill: false,
                   borderColor: "rgb(75, 192, 192)",
                   tension: 0.6,
                 },

@@ -25,11 +25,6 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     setError,
   } = useForm();
 
-  const requiredUser = {
-    username: "user@domain.com",
-    password: "fooBar123",
-  };
-
   const onSubmit = async (data: { email: string; password: string }) => {
     // We are intentionally ambiguous about which property is incorrect
     // to prevent brute force hacks

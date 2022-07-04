@@ -25,6 +25,7 @@ const OverviewData: React.FC<OverviewDataProps> = ({ overviewData }) => {
           title={text.dashboard.activityOverview.revenue}
           figure={overviewData.balance}
           figureTwo={overviewData.oldBalance}
+          logo={<LogoSmall />}
         />
       </div>
     </div>

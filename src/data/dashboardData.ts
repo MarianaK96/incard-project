@@ -38,8 +38,8 @@ export const dashboardData = {
   activity: {
     revenue: 8027.0,
     oldRevenue: 7786.19,
-    expenses: 4467.0,
-    oldExpenses: 4332.99,
+    expenses: 4332.99,
+    oldExpenses: 4467.0,
   },
   balanceHistory: [
     2440.0, 2022.0, 2550.0, 2650.0, 2440.0, 2022.0, 2550.0, 2650.0, 2440.0,

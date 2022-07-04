@@ -1,6 +1,5 @@
 import { dashboardData } from "src/data/dashboardData";
 import { loginDataSuccess, loginDataFailure } from "src/data/loginData";
-// Use env.vars
 
 export const api = () => {
   return {
@@ -33,7 +32,7 @@ export const getGraphData = () => {
   return response;
 };
 
-export const postLogin = async (data) => {
+export const postLogin = async (data: { email: any; password: any }) => {
   //   let response = await fetch(`${api().baseUrl}/graph-data`, {
   //     method: "POST",
   //     ...apiHeaders(),
@@ -43,7 +42,7 @@ export const postLogin = async (data) => {
   // Mocking backend response
 
   const requiredUser = {
-    username: "user@domain.com",
+    username: "jane@incard.com",
     password: "fooBar123",
   };
 

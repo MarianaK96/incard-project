@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import HomePage from "./home";
+import Login from "./login";
 
 const Home: NextPage = () => (
   <>
-    <HomePage />
+    <Login />
   </>
 );
 export default Home;

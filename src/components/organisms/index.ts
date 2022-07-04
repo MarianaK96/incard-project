@@ -1,4 +1,5 @@
 import LoginForm from "./LoginForm";
 import DashboardData from "./DashboardData";
+import SideBarNav from "./SideBarNav";
 
-export { LoginForm, DashboardData };
+export { LoginForm, DashboardData, SideBarNav };

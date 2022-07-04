@@ -20,6 +20,7 @@ module.exports = {
         },
         teal: "#0CF8E9",
         success: "#58C38E",
+        error: "#E24545",
         grey: "#858E97",
       },
     },
