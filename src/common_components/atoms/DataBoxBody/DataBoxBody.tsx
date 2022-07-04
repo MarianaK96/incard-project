@@ -34,7 +34,7 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
   return (
     <>
       <div className="rounded-b-md bg-dark-blue-600 w-full justify-between h-32">
-        <div className="flex justify-start h-full px-8">
+        <div className="flex md:justify-start h-full px-4 justify-center md:px-8">
           <div className="flex flex-col justify-around h-full">
             <Text as="p" textStyle="body" className="text-grey">
               {title}
@@ -55,7 +55,7 @@ const DataBoxBody: React.FC<DataBoxBodyProps> = ({
               </span>
             </Text>
           </div>
-          <div className="ml-auto">{logo}</div>
+          {logo && <div className="ml-auto">{logo}</div>}
         </div>
       </div>
     </>

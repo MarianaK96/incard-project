@@ -17,7 +17,7 @@ const ActivityOverview: React.FC<ActivityOverviewProps> = ({ data }) => {
           actionOne={text.dashboard.activityOverview.actionOne}
           type={"accountHistory"}
         />
-        <div className="flex flex-col md:flex-row">
+        <div className="flex">
           <DataBoxBody
             title={text.dashboard.activityOverview.revenue}
             figure={data.revenue}
