@@ -20,40 +20,42 @@ const DashboardPage = ({ data }: IAllData): JSX.Element => {
 
   return (
     <>
-      {authContext?.authState.token ? (
-        <div className="bg-dark-blue-900">
-          <Layout>
-            <div className="flex flex-row justify-between">
-              <Link href="/">
-                <a className="m-8">
-                  <Logo className="cursor-pointer" />
-                </a>
-              </Link>
-              <Text
-                as="p"
-                onClick={() => {
-                  authContext.logout();
-                  router.push("/login");
-                }}
-                className="text-white p-8 cursor-pointer"
-                bold
-              >
-                {text.dashboard.logout}
-              </Text>
-            </div>
-            <div>
-              <DashboardData
-                overviewData={overview}
-                accountsData={otherAccounts}
-                balanceHistoryData={balanceHistory}
-                activityData={activity}
-              />
-            </div>
-          </Layout>
-        </div>
-      ) : (
-        <div>Loading...</div>
-      )}
+      <div>
+        {authContext?.authState.token ? (
+          <div className="bg-dark-blue-900">
+            <Layout>
+              <div className="flex flex-row justify-between">
+                <Link href="/">
+                  <a className="m-8">
+                    <Logo className="cursor-pointer" />
+                  </a>
+                </Link>
+                <Text
+                  as="p"
+                  onClick={() => {
+                    authContext.logout();
+                    router.push("/login");
+                  }}
+                  className="text-white p-8 cursor-pointer"
+                  bold
+                >
+                  {text.dashboard.logout}
+                </Text>
+              </div>
+              <div>
+                <DashboardData
+                  overviewData={overview}
+                  accountsData={otherAccounts}
+                  balanceHistoryData={balanceHistory}
+                  activityData={activity}
+                />
+              </div>
+            </Layout>
+          </div>
+        ) : (
+          <div className="bg-dark-blue-900" />
+        )}
+      </div>
     </>
   );
 };

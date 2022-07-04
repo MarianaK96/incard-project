@@ -1,5 +1,6 @@
 export interface IOtherAccountsData {
   [key: string]: {
+    currency: string;
     name: string;
     sum: number;
   };
@@ -10,7 +11,12 @@ export interface IBalanceHistoryData {
 }
 
 export interface IActivity {
-  [key: string]: string;
+  data: {
+    revenue: number;
+    oldRevenue: number;
+    expenses: number;
+    oldExpenses: number;
+  };
 }
 
 export interface IAllData {

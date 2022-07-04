@@ -37,7 +37,7 @@ export const postLogin = async (data: { email: any; password: any }) => {
   // Mocking backend response
 
   const requiredUser = {
-    username: "user@domain.com",
+    username: "jane@incard.com",
     password: "fooBar123",
   };
 

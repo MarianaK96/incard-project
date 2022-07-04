@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -25,13 +25,8 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
     setError,
   } = useForm();
 
-  const requiredUser = {
-    username: "user@domain.com",
-    password: "fooBar123",
-  };
-
   const onSubmit = async (data: { email: string; password: string }) => {
-    // We are intentionally ambiguous about which property is incorrect
+    // made it intentionally ambiguous about which property is incorrect
     // to prevent brute force hacks
 
     const response: { status: number; jwtToken?: string } = await postLogin({
@@ -54,7 +49,9 @@ const LoginForm: React.FC<LoginFormProps> = ({}) => {
   return (
     <div className="flex space-y-4 flex-col h-screen px-10 md:px-32 lg:w-1/2 lg:px-20 py-20 ">
       <Link href="/">
-        <Logo className="cursor-pointer" />
+        <a>
+          <Logo className="cursor-pointer" />
+        </a>
       </Link>
       <Text as="h1" textStyle="heading" className="text-white pt-20">
         {text.login.title}

@@ -1,19 +1,28 @@
-// src/context/auth-context.js
 import React from "react";
+import { IAuthContext } from "src/interfaces";
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext<IAuthContext | null>(null);
 const { Provider } = AuthContext;
 
-const AuthProvider = ({ children }) => {
+interface ProviderProps {
+  children: React.ReactNode;
+}
+
+const AuthProvider = ({ children }: ProviderProps) => {
   let storedJwt;
   if (typeof window !== "undefined")
     storedJwt = localStorage.getItem("auth-token");
-  const [authState, setAuthState] = React.useState({
+  const [authState, setAuthState] = React.useState<{
+    token: string | null | undefined | void;
+  }>({
     token: storedJwt,
   });
 
-  const setUserAuthInfo = (data) => {
-    const token = localStorage.setItem("auth-token", data);
+  const setUserAuthInfo = (data: string | undefined) => {
+    const token = localStorage.setItem(
+      "auth-token",
+      data !== undefined ? data : ""
+    );
 
     setAuthState({
       token,
@@ -23,7 +32,6 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     if (typeof window !== "undefined") localStorage.removeItem("auth-token");
   };
-
   // checks if the user is authenticated or not
   const isUserAuthenticated = () => {
     if (!authState.token) {
